@@ -2,11 +2,7 @@ TODO:
 
 Write tests for new dancers
 
-push dancers to window.dancers array
-
 Line up button (lineup method)
-
-Make dancers that interact with other dancers. For example, by iterating across the array window.dancers and using the Pythagorean Theorem to calculate your distance from each other dancer, you can have a dancer find its n closest neighbors and do something based on their positions.
 
 Make a dancer react to the mouse
 

@@ -1,5 +1,5 @@
 class Ingredient {
-  constructor(x) {
+  constructor() {
     this.x = window.innerWidth / 2;
     this.y = 0;
     this.$node = $('<img class="ingredient"></img>');
@@ -10,10 +10,17 @@ class Ingredient {
     setTimeout(this.step.bind(this), 1000 / 30);
   }
   fall() {
-    if (this.y <= window.innerHeight - 100) {
+    if (this.y === 5) {
+      this.x -= this.$node[0].clientWidth / 2;
+    }
+    if (this.y === window.stackHeight - this.height) {
+      window.stackHeight -= this.height;
+    }
+    if (this.y <= window.stackHeight) {
       this.y++;
       this.setPosition(this.y, this.x);
       setTimeout(this.fall.bind(this), 0.1);
+      this.height = this.$node[0].clientHeight;
     }
     /// if this.y <= window.innerHeight - 100 triggers add position to storage
   }
