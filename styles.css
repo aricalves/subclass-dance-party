@@ -25,3 +25,12 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.squareDancer{
+  border:10px solid blue;
+  animation-timing-function: ease, step-start;
+  position:absolute;
+}
+.spinningDancer{
+  border:10px solid white;
+  position:absolute;
+}
