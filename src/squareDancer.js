@@ -1,13 +1,13 @@
-var SquareDancer = function(top, left, timeBetweenSteps) {
-  Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="squareDancer"></span>');
-  this.setPosition(top, left);
-};
-SquareDancer.prototype = Object.create(Dancer.prototype);
-SquareDancer.prototype.constructor = SquareDancer;
+// var BottomBun = function(top, left, timeBetweenSteps) {
+//   Dancer.call(this, top, left, timeBetweenSteps);
+//   this.$node = $('<span class="squareDancer"></span>');
+//   this.setPosition(top, left);
+// };
+// SquareDancer.prototype = Object.create(Dancer.prototype);
+// SquareDancer.prototype.constructor = SquareDancer;
 
-SquareDancer.prototype.step = function() {
-  Dancer.prototype.step.call(this);
+// SquareDancer.prototype.step = function() {
+//   Dancer.prototype.step.call(this);
 
-  this.$node.animate();
-};
+//   this.$node.animate();
+// };

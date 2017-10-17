@@ -30,7 +30,6 @@ body, a:link, a:visited, a:active{
   animation-timing-function: ease, step-start;
   position:absolute;
 }
-.spinningDancer{
-  border:10px solid white;
+.bottomBun{
   position:absolute;
 }
