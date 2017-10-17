@@ -1,6 +1,6 @@
 class Ingredient {
   constructor() {
-    this.x = window.innerWidth / 2;
+    this.x = window.innerWidth - 219 / 2;
     this.y = 0;
     this.$node = $('<img class="ingredient"></img>');
     this.fall();

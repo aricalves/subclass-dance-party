@@ -1,5 +1,5 @@
 class Lettuce extends Ingredient {
-  constructor(x) {
+  constructor() {
     super();
     this.$node = $('<img src="imgs/lettuce.png" class="ingredient lettuce" alt="lettuce"></img>');
 
