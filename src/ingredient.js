@@ -3,7 +3,8 @@ class Ingredient {
     this.x = window.innerWidth / 2;
     this.y = 0;
     this.$node = $('<img class="ingredient"></img>');
-    this.fall()
+    this.fall();
+    this.burgerNumber = window.orderNumber;
   }
   step() {
     setTimeout(this.step.bind(this), 1000 / 30);
@@ -23,7 +24,15 @@ class Ingredient {
     };
     this.$node.css(pos);
   }
-  
+  lineUp() {
+  // walk through the storage array 
+  // reset the 
+    // x value    x * orderNumber
+    window.orderNumber++;
+    50 + longestimgpixel * ordernumber;
+    window.innerwidth / 2 - longestimgpixel - 30;
+  }
+
 }
 
 // let t = new Ingredient(10)

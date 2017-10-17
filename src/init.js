@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  window.orderNumber = 1;
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -16,15 +17,15 @@ $(document).ready(function() {
      * to the stage.
      */
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-
-    var dancer = new BottomBun(300);
-    
+    var x = 300;
+    var dancer = eval(`new ${dancerMakerFunctionName}(${x})`);
+  
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
     
     
     
