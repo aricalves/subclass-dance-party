@@ -4,7 +4,7 @@ $(document).ready(function() {
   window.stackHeight = window.innerHeight - 25;
   window.currentStack = [];
 
-  $('.addIngredient').on('click', function(event) {
+  $('.addIngredient').on('click', function() {
 
     let burgerMakerFunctionName = $(this).data('burger-maker-function-name');
    
@@ -14,25 +14,31 @@ $(document).ready(function() {
     window.currentStack.push(ingredient);
   });
   
-  // $('.removeTopIngredient').on('click', function() {
-  //    window.currentStack.pop();
-  // });
-  
-  
-  $('.newOrder').on('click', function() {
-    window.currentStack.forEach((node) => {
-    
-      let newX = (230 / 2 + orderNumber * 219) - node.$node[0].clientWidth / 2;
-      node.setPosition(node.y, newX);
-    });
-    
-    
-    window.burgerStack.push(window.currentStack);
-    window.currentStack = [];
-    window.stackHeight = window.innerHeight - 25;
-    window.orderNumber++;
+  let rotate = {};
+  $('body').on('click', 'img.ingredient', function() {
+    rotate[this] = rotate[this] || 90;
+    $(this).css({'transform': 'rotate(' + rotate[this] + 'deg)'});
+    console.dir(this);
+    if (rotate[this] === 360) {
+      rotate[this] = -90;
+    }
+    rotate[this] += 90;
+    return $(this);
   });
   
   
+  $('.newOrder').on('click', function() {
+    if (window.currentStack.length > 0) {
+      window.currentStack.forEach((node) => { 
+        let newX = (230 / 2 + orderNumber * 219) - node.$node[0].clientWidth / 2;
+        node.setPosition(node.y, newX);
+      });
+      window.burgerStack.push(window.currentStack);
+      window.currentStack = [];
+      window.stackHeight = window.innerHeight - 25;
+      window.orderNumber++;
+    }
+  });
+    
 });
 

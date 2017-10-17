@@ -32,14 +32,14 @@ class Ingredient {
     this.$node.css(pos);
   }
   lineUp() {
-  // walk through the storage array 
-  // reset the 
-    // x value    x * orderNumber
     window.orderNumber++;
     50 + longestimgpixel * ordernumber;
     window.innerwidth / 2 - longestimgpixel - 30;
   }
-
+  delete() {
+    console.log('this');
+    
+  }
 }
 
 // let t = new Ingredient(10)
