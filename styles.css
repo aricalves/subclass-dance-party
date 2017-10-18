@@ -9,7 +9,7 @@ body{
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
-  color: #353535;
+  color: #9da773;
   text-decoration: none;
 }
 .title, .addIngredient{
@@ -22,10 +22,10 @@ body, a:link, a:visited, a:active{
 }
 .topbar{
   height:32px;
-  background-color: #555;
+  background-color: #0c110a;
 }
 .title{
-  background-color: #777;
+  background-color: #0c110a;
 }
 .ingredient {
   position:absolute;
