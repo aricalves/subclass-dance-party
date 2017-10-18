@@ -7,25 +7,26 @@ $(document).ready(function() {
   $('.addIngredient').on('click', function() {
 
     let burgerMakerFunctionName = $(this).data('burger-maker-function-name');
-   
-    
+    if (window.currentStack.length === 0 && burgerMakerFunctionName !== 'BottomBun') {
+      alert('Start your burger with a bottom bun!');
+      return;
+    }
     let ingredient = eval(`new ${burgerMakerFunctionName}()`);
     $('body').append(ingredient.$node);
     window.currentStack.push(ingredient);
   });
   
   let rotate = {};
+  
   $('body').on('click', 'img.ingredient', function() {
     rotate[this] = rotate[this] || 90;
     $(this).css({'transform': 'rotate(' + rotate[this] + 'deg)'});
-    console.dir(this);
     if (rotate[this] === 360) {
       rotate[this] = -90;
     }
     rotate[this] += 90;
     return $(this);
   });
-  
   
   $('.newOrder').on('click', function() {
     if (window.currentStack.length > 0) {
